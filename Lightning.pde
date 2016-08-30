@@ -5,20 +5,26 @@ int endy = 150;
 void setup()
 {
   size(300,300);
-  strokeWeight(100);
+  strokeWeight(10);
   background(0);
-  noLoop ();
 }
 void draw()
 {
-strokecolor;
+  while(endx < 300)
+  {
+  	stroke((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
+  	line (startx, starty, endx, endy);
+    endx = endx + ((int) (Math.random() * 9));
+    endy = endy + ((int) ((Math.random() * 18) - 9));
+  	startx = endx;
+  	starty = endy;
+  }
 }
 void mousePressed()
 {
-redraw ()
-}
-
-void strokecolor()
-{
-
+	background(0);
+	startx = 0;
+	starty = 150;
+	endx = 0;
+	endy = 150;
 }
