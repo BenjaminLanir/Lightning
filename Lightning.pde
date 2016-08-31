@@ -1,30 +1,43 @@
-int startx = 0;
-int starty = 150;
-int endx = 0;
-int endy = 150;
+int startx = 150;
+int starty = 0;
+int endx = 150;
+int endy = 0;
+int cloudx = 0;
 void setup()
 {
   size(300,300);
-  strokeWeight(2);
+  strokeWeight(5);
   background(0);
 }
 void draw()
 {
-  while(endx < 300)
+  while(endy < 300)
   {
   	stroke((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
-    endx = endx + ((int) (Math.random() * 9));
-    endy = endy + ((int) ((Math.random() * 18) - 9));
+    endx = endx + ((int) ((Math.random() * 18) - 9));
+    endy = endy + ((int) (Math.random() * 9));
     line (startx, starty, endx, endy);
   	startx = endx;
   	starty = endy;
   }
+  clouds();
 }
 void mousePressed()
 {
 	background(0);
-	startx = 0;
-	starty = 150;
-	endx = 0;
-	endy = 150;
+	startx = 150;
+	starty = 0;
+	endx = 150;
+	endy = 0;
+	cloudx = 0;
+}
+void clouds()
+{
+  while(cloudx < 300)
+  {
+  	noStroke();
+  	fill(150);
+  	ellipse(cloudx, 20, 60, 60);
+  	cloudx = cloudx + 40;
+  }
 }
