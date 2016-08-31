@@ -5,7 +5,7 @@ int endy = 150;
 void setup()
 {
   size(300,300);
-  strokeWeight(10);
+  strokeWeight(2);
   background(0);
 }
 void draw()
@@ -13,9 +13,9 @@ void draw()
   while(endx < 300)
   {
   	stroke((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
-  	line (startx, starty, endx, endy);
     endx = endx + ((int) (Math.random() * 9));
     endy = endy + ((int) ((Math.random() * 18) - 9));
+    line (startx, starty, endx, endy);
   	startx = endx;
   	starty = endy;
   }
